@@ -218,3 +218,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# WildTrace local secrets
+.env.*
+!.env.example
+
+# Local database exports
+*.sql

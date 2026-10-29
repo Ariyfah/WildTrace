@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WildTrace</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <h2>WildTrace</h2>
+
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Explore</a>
+            <a href="#">About</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero">
+            <h1>Discover Wildlife</h1>
+
+            <p>
+                Explore endangered and protected animals around the world.
+            </p>
+
+            <form method="GET" action="/">
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="Search by country or state..."
+                    value="{{ search }}"
+                    required
+                >
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+
+        <section class="animals">
+            <h2>Search Results</h2>
+
+            <div class="animal-container">
+                {% for animal in animals %}
+                <div class="animal-card">
+                    {% if animal.image %}
+                        <img
+                            src="{{ url_for('static', filename='images/' + animal.image) }}"
+                            alt="{{ animal.name }}"
+                            class="animal-photo"
+                        >
+                    {% endif %}
+
+                    <h3>{{ animal.name }}</h3>
+                    <p>Country: {{ animal.country }}</p>
+                    <p>State: {{ animal.state }}</p>
+                    <p>Status: {{ animal.status }}</p>
+                    <p>{{ animal.facts }}</p>
+                </div>
+                {% else %}
+                    {% if search %}
+                        <p>No animals found for "{{ search }}".</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,741 @@
+/* Basic page style */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f5f0;
+    color: #26382b;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font: inherit;
+}
+/* Navigation bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(38, 56, 43, 0.08);
+}
+
+nav h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #26382b;
+}
+
+nav a {
+    text-decoration: none;
+    color: #26382b;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #719477;
+}
+
+/*Homepage style*/
+.hero {
+    text-align: center;
+    padding: 100px 20px 80px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    color: #26382b;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 650px;
+    margin: 0 auto 35px;
+    color: #667568;
+}
+
+/* Search bar */
+.search-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.search-box input{
+    width: 400px;
+    max-width: 100%;
+    padding: 15px 18px;
+    border: 1px solid #d4dbd2;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box input:focus{
+    border-color: #719477;
+    box-shadow: 0 0 0 3px rgba(113,148,119,0.15);
+}
+
+/*Main buttons*/
+button,.btn{
+    padding: 13px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #719477;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,.btn:hover{
+    background-color: #405b46;
+    transform: translateY(-2px);
+}
+
+/*AI button*/
+.ai-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 24px;
+    background-color: #719477;
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+.ai-btn:hover {
+    background-color: #405b46;
+}
+
+/* Homepage animal section */
+.animals {
+    padding: 60px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.animals h2 {
+    font-size: 32px;
+    margin-bottom: 35px;
+    color: #26382b;
+}
+
+/* Arrange animal cards in a row */
+.animal-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* Individual animal card */
+.animal-card {
+    width: 280px;
+    padding: 20px;
+    border-radius: 14px;
+    background-color: #f5f5f0;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(38, 56, 43, 0.08);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.animal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(38, 56, 43, 0.14);
+}
+
+/* Animal pictures */
+.animal-photo {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.animal-card h3 {
+    font-size: 22px;
+    margin: 0 0 10px;
+    color: #26382b;
+}
+
+.animal-card p {
+    font-size: 14px;
+    color: #667568;
+    line-height: 1.7;
+}
+
+/* Search results section */
+.search-results {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 25px;
+}
+
+.search-results h2 {
+    font-size: 30px;
+    color: #26382b;
+    margin-bottom: 25px;
+}
+
+/* One animal result row */
+.animal-result {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8df;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.animal-result:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(38, 56, 43, 0.1);
+}
+
+/* Picture in the result row */
+.result-image {
+    width: 120px;
+    height: 90px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Animal names */
+.result-info h3 {
+    margin: 0 0 5px;
+    font-size: 20px;
+    color: #26382b;
+}
+
+.result-info p {
+    margin: 0;
+    color: #667568;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* When no animals match */
+.no-results {
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #667568;
+    text-align: center;
+}
+
+/* Animal details pop-up */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px 15px;
+    overflow-y: auto;
+    background-color: rgba(20, 35, 25, 0.7);
+}
+
+.modal-content {
+    position: relative;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    margin: 0 0 10px;
+    color: #26382b;
+    font-size: 30px;
+}
+
+.modal-content p {
+    color: #58665a;
+    line-height: 1.8;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    padding: 5px 12px;
+    background-color: transparent;
+    color: #26382b;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background-color: #f0f3ed;
+    transform: none;
+}
+
+/* Conservation status label */
+.status-label {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 5px 0 15px;
+    border-radius: 20px;
+    background-color: #e5eee2;
+    color: #36583b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Quiz section */
+.quiz-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 35px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(38, 56, 43, 0.08);
+}
+
+.quiz-container h2 {
+    margin-top: 0;
+    color: #26382b;
+    font-size: 30px;
+    text-align: center;
+}
+
+.quiz-progress {
+    margin-bottom: 25px;
+    color: #667568;
+    text-align: center;
+    font-size: 14px;
+}
+
+.quiz-question {
+    margin-bottom: 25px;
+    font-size: 21px;
+    font-weight: 600;
+    color: #26382b;
+}
+
+.quiz-image {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: 260px;
+    margin: 0 auto 25px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.quiz-option {
+    padding: 15px;
+    border: 1px solid #dce4d9;
+    border-radius: 10px;
+    background-color: #f5f5f0;
+    color: #26382b;
+    text-align: left;
+    cursor: pointer;
+}
+
+.quiz-option:hover {
+    background-color: #e5eee2;
+}
+
+.quiz-option:disabled {
+    cursor: not-allowed;
+    opacity: 0.75;
+}
+
+.quiz-score {
+    margin-top: 25px;
+    padding: 18px;
+    border-radius: 10px;
+    background-color: #e5eee2;
+    color: #26382b;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Drawing game section */
+.coloring-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(38, 56, 43, 0.08);
+}
+
+.coloring-container h2 {
+    color: #26382b;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Animal information before coloring */
+.animal-intro {
+    padding: 25px;
+    margin-bottom: 25px;
+    background-color: #f5f5f0;
+    border-radius: 12px;
+}
+
+.animal-intro h3 {
+    margin-top: 0;
+    color: #26382b;
+    font-size: 24px;
+}
+
+.animal-intro p {
+    color: #667568;
+    line-height: 1.8;
+}
+
+/* Coloring canvas area */
+.coloring-area {
+    padding: 20px;
+    border: 1px solid #dce4d9;
+    border-radius: 12px;
+    background-color: #fafbf8;
+    text-align: center;
+}
+
+#coloring-canvas {
+    display: block;
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    margin: 0 auto 20px;
+    border: 1px solid #dce4d9;
+    border-radius: 8px;
+    background-color: #ffffff;
+    touch-action: none;
+}
+
+/* Coloring tools */
+.coloring-tools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.color-option {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: 2px solid #dce4d9;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.active {
+    outline: 3px solid #719477;
+    outline-offset: 3px;
+}
+
+/* Color picker */
+.color-picker {
+    width: 50px;
+    height: 40px;
+    padding: 3px;
+    border: 1px solid #dce4d9;
+    border-radius: 8px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+/* Game instructions */
+.coloring-instructions {
+    margin-top: 15px;
+    color: #667568;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Animal study cards section */
+.study-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+}
+
+.study-section h2 {
+    margin-bottom: 30px;
+    color: #26382b;
+    font-size: 32px;
+    text-align: center;
+}
+
+/* Arrange study cards */
+.study-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* Individual study card */
+.study-card {
+    overflow: hidden;
+    border-radius: 14px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(38, 56, 43, 0.08);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.study-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(38, 56, 43, 0.14);
+}
+
+.study-card img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.study-card-content {
+    padding: 20px;
+}
+
+.study-card-content h3 {
+    margin: 0 0 5px;
+    color: #26382b;
+    font-size: 21px;
+}
+
+.study-card-content .scientific-name {
+    margin: 0 0 15px;
+    color: #719477;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.study-card-content p {
+    margin: 8px 0;
+    color: #667568;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.study-card .status-label {
+    margin-top: 10px;
+}
+
+/* Responsive design for tablets and smaller screens */
+@media (max-width: 900px) {
+    nav {
+        padding: 20px 30px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav a {
+        margin-left: 10px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .animals {
+        padding: 40px 20px;
+    }
+
+    .study-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .coloring-container {
+        margin: 25px 15px;
+        padding: 20px;
+    }
+}
+
+/* Responsive design for mobile phones */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        padding: 20px 15px;
+    }
+
+    nav div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    nav a {
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .study-container {
+        grid-template-columns: 1fr;
+    }
+
+    .study-section {
+        padding: 20px;
+    }
+
+    .animal-result {
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .result-image {
+        width: 85px;
+        height: 75px;
+    }
+
+    .quiz-container {
+        margin: 20px 12px;
+        padding: 20px;
+    }
+
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        padding: 22px;
+    }
+
+    .coloring-container {
+        padding: 15px;
+    }
+
+    .coloring-area {
+        padding: 10px;
+    }
+
+    .coloring-tools {
+        gap: 10px;
+    }
+}
+
+/* Country autocomplete suggestions */
+.search-wrapper {
+    position: relative;
+    width: 400px;
+    max-width: 100%;
+}
+
+.search-wrapper input {
+    width: 100%;
+}
+
+.suggestions-list {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    z-index: 100;
+    max-height: 220px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #d4dbd2;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(38, 56, 43, 0.12);
+}
+
+.suggestions-list li {
+    padding: 12px 16px;
+    color: #26382b;
+    text-align: left;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background-color: #e5eee2;
+}
+
+/* Helpful messages */
+.empty-message {
+    padding: 25px;
+    color: #667568;
+    text-align: center;
+}
+
+/* General page spacing */
+section {
+    scroll-margin-top: 25px;
+}
+
+img {
+    max-width: 100%;
+}
+
